@@ -2,7 +2,11 @@
 <html>
 <head>
 	<title></title>
-<link rel="stylesheet" type="text/css" href="<nav class="navbar navbar-default" role="navigation">
+<link rel="stylesheet" type="text/css" href="Bootstrap.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -49,9 +53,22 @@
       </li>
     </ul>
   </div><!-- /.navbar-collapse -->
-</nav>">
-</head>
-<body>
+</nav>
+
+<div class="row"></div>
+<div class="col-md-12"></div>
+<div id="main"><canvas id="game"></canvas></div>
+<script>
+var canvas=document.getElementById("game");
+var ctx=canvas.getContext("2d");
+canvas.width = 480;
+canvas.height = 320;
+
+ctx.fillStyle = 'black';
+ctx.beginPath();
+ctx.arc(100,150,50,0,2*Math.PI, true);
+ctx.fill();
+</script>
 
 </body>
 </html>
