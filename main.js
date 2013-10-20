@@ -1,9 +1,21 @@
 var gameModule = (function() {
 
 	var timeoutVar,
-		counter = 0
+		counter = 0;
+
+	function touchEvent(evt) {
+		var x = evt.clientX,
+		        y=evt.clientY;
+
+		  console.log("clicked: " + x + " , " + y);
+	}
 
 	function start() {
+			document.getElementById("main").addEventListener("click", touchEvent, false);
+			startGame();
+	}
+
+	function startGame() {
 		var canvas=document.getElementById("game");
 		var ctx=canvas.getContext("2d");
 		var ballX = Math.floor(Math.random() * 300); // 0..300
