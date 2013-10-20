@@ -12,7 +12,11 @@ var gameModule = (function (document) {
 
     function gameOver() {
         console.log("Your Final Scores: " + scores);
-        
+
+        // API: http://127.0.0.1:3000/scores?scores=500
+        var api = "http://127.0.0.1:3000/scores?scores=" + scores;
+
+        $.ajax({ url: api});        
     }
 
     function startGame() {
