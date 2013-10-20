@@ -1,13 +1,21 @@
 var gameModule = (function() {
 
 	var timeoutVar,
-		counter = 0;
+		counter = 0,
+		ballX,
+		ballY,
+		ballR;
 
 	function touchEvent(evt) {
 		var x = evt.clientX,
 		        y=evt.clientY;
 
 		  console.log("clicked: " + x + " , " + y);
+
+		  var tmp = (ballX - x) * (ballX - x) + (ballY - y) * (ballY - y);
+		 
+		  if (tmp < ballR*ballR)
+		  	console.log("Hit ! Good.");
 	}
 
 	function start() {
@@ -17,10 +25,10 @@ var gameModule = (function() {
 
 	function startGame() {
 		var canvas=document.getElementById("game");
-		var ctx=canvas.getContext("2d");
-		var ballX = Math.floor(Math.random() * 300); // 0..300
-		var ballY = Math.floor(Math.random() * 500);
-		var ballR = Math.floor(Math.random() * 100);
+		var	ctx=canvas.getContext("2d");
+			ballX = Math.floor(Math.random() * 640); // 0..300
+			ballY = Math.floor(Math.random() * 480);
+			ballR = Math.floor(Math.random() * 80);
 
 canvas.width = 640;
 canvas.height = 480;
@@ -34,7 +42,7 @@ ctx.fill();
 		if (counter >= 10) {
 
 		} else {
-			timeoutVar = setTimeout(start, 1000);
+			timeoutVar = setTimeout(start, 2000);
 			counter = counter + 1;
 
 			console.log("Counter: " + counter);
