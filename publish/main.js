@@ -49,7 +49,7 @@ var gameModule = (function (document) {
         if (tmp < ballR * ballR) {
             scores = scores + (100 - ballR);
             scores1 = (100 - ballR);
-            console.log("Hit ! Your get scores: " + scores1);
+            console.log("Hit ! You get scores: " + scores1);
             console.log("Your scores: " + scores);
         }
     }
